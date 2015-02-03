@@ -1,1 +1,1 @@
-Online Store using Ruby on Rails, JavaScript, HTML5 and CSS
+Online Store using Ruby on Rails, JavaScript, HTML5 and CSS!
