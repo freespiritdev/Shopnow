@@ -24,6 +24,25 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to @product, notice: 'Product successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @product.destroy
+    title = @product.title
+
+    if @product.destroy
+      flash[:notice] = "\"#{title}\" was deleted"
+      redirect_to @product
+    else
+      flash[:error] = "There was an error"
+      render :show
+    end
   end
 
   private
