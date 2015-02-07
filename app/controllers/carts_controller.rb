@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+    before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def index
     @carts = Cart.all
   end
@@ -8,7 +9,7 @@ class CartsController < ApplicationController
   end
 
    def create
-    @product = Cart.new(carts_params)
+    @cart = Cart.new(cart_params)
     if @cart.save
       redirect_to @cart, notice: 'Cart was created'
     else
@@ -24,4 +25,12 @@ class CartsController < ApplicationController
       render action: 'edit'
     end
   end
+  private
+    def set_cart
+      @cart = Cart.find(params[:id])
+    end
+
+  def cart_params
+      params[:cart]
+    end
 end
