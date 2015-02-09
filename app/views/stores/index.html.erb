@@ -5,15 +5,15 @@
 <h1>Catalog</h1>
 
 <% cache ['store', Product.latest] do %>
-  <% @products.each do |products| %>
-    <% cache ['entry', products] do %>
+  <% @products.each do |product| %>
+    <% cache ['entry', product] do %>
       <div class="entry">
-        <%= image_tag(products.image_url, :width =>60) %>
-        <h3><%= products.title %></h3>
-        <%= sanitize(products.description) %>
+        <%= image_tag(product.image_url, :width =>60) %>
+        <h3><%= product.title %></h3>
+        <%= sanitize(product.description) %>
         <div class= "price_line">
-          <span class="price"><%= number_to_currency(products.price) %></span>
-           <%= button_to 'Add to Cart', line_items_path(product_id: products), remote: true %><br
+          <span class="price"><%= number_to_currency(product.price) %></span>
+           <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %><br
         </div>
       </div>
     <% end %>

@@ -2,7 +2,22 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+<table>
+  <% @cart.line_items.each do |item| %>
+  <tr>
+    <td><%= item.quantity %> &times;</td>
+    <td><%= item.product.title %></td>
+    <td><%= number_to_currency(item.total_price) %></td>
+  </tr>
+  <% end %>
 
-<br>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
+  <tr>
+    <td colspan="2">Total</td>
+    <td><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?' } %>
+
+
 <%= link_to 'Back', carts_path %>

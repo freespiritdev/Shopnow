@@ -31,4 +31,14 @@ class LineItemsController < ApplicationController
       render action: 'edit'
     end
   end
+
+  private
+
+   def set_line_item
+      @line_item = LineItem.find(params[:id])
+    end
+
+  def line_item_params
+      params.require(:line_item).permit(:product_id)
+    end
 end
