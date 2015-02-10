@@ -17,7 +17,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(product.id) 
 
     if @line_item.save
-      redirect_to store_url
+      redirect_to @line_item.cart, notice: 'Line item was created.'
 
     else
       render action: 'new'
