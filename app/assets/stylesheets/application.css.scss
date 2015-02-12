@@ -1,22 +1,170 @@
-h1 {
-  color: black;
-}
-
 a:link, a:active {
-  color: #ffffff;
+   color: #ffffff;
 }
-
 a:visited {
-  color: blue;
+ color: #6699FF;
 }
 
-em {
-  color: #43CCFF;
+#banner {
+  background: #fff;
+  padding: 10px;
+  border-bottom: 0px solid;
+  font: small-caps 40px/40px "Helvetica", Geneva, Arial, sans-serif;
+  color: #000;
+  text-align: center;
+
+  img {
+    float: left;
+  }
 }
 
-body {
-  background: #FFAA44;
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
 }
 
+#columns {
+  background: #000;
 
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
 
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #000;
+
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:   white;
+
+      table {
+        border-top:     2px dotted #000;
+        border-bottom:  2px dotted #000;
+        margin-bottom:  10px;
+      }
+    }
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        a{
+          color: #bfb;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+.products {
+  table {
+    border-collapse: collapse;
+  }
+
+table tr td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.list_image {
+  width: 60px;
+  height: 70px;
+}
+
+.list_description {
+  width: 60%;
+
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    color:        #244;
+    font-weight:  bold;
+    font-size:    larger;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+  
+  .list_actions {
+    font-size:   x-small;
+    text-align:  right;
+    padding-left: 1em;
+  }
+
+  .list_line_even {
+    background:    #e0f8f8;
+  }
+
+  .list_line_odd {
+    background: #f8b0f8;
+  }
+}
+
+.carts, #side #cart {
+  .item_price, .total_line {
+    text-align: right;
+  }
+  
+  .total_line .total_cell {
+    font-weight: bold;
+    border-top: 3px solid #ccc;
+  }
+}
+
+.depot_form {
+  fieldset {
+    background: #efe;
+
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 1.2em 1em;
+    }
+}
+
+form {
+  label {
+    width: 4em;
+    float: left;
+    text-align: right;
+    padding-top: 1.2em;
+    margin-right: 0.1em;
+    display: block;
+  }
+
+  select, textarea, input {
+    margin-left: 1.5em;
+  }
+
+  .submit {
+    margin-left: 4em;
+  }
+
+  br {
+    display: none
+    }
+  }
+}
