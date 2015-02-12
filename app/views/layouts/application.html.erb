@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= link_to "Home", stores_path %>
+  <%= link_to "Products", products_path %>
+  <%= link_to "Carts", carts_path %>
 </head>
 
 <body class="<%= controller.controller_name %>">
@@ -20,9 +23,7 @@
         <% end %>
       </div>
   
-      <%= link_to "Home", stores_path %>
-      <%= link_to "Products", products_path %>
-      <%= link_to "Carts", carts_path %>
+     
 
     <div id="main">
       <%= yield %>

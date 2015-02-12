@@ -1,17 +1,5 @@
-<%= simple_form_for(@cart) do |f| %>
-  <% if @cart.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
+<h1>New cart</h1>
 
-      <ul>
-      <% @cart.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'form' %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= link_to 'Back', carts_path %>
