@@ -15,7 +15,6 @@
   </div>
   <div id="columns">
     <div id="side">
-      <div id="cart">
         <% if @cart %> 
           <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
           <%= render @cart %>
@@ -26,6 +25,14 @@
     <div id="main">
       <%= yield %>
     </div>
+    <div id="wrapper">
+      <footer id="footer" align="center"> <div>
+   
+    
+        <em>
+          Copyright &copy; 2015 CBS VI 360
+        </em>
+      </footer>
   </div>
 </body>
 </html>

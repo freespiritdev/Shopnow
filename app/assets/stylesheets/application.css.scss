@@ -28,7 +28,7 @@ a:visited {
 }
 
 #columns {
-  background: #000;
+  background: #fff;
 
   #main {
     margin-left: 17em;
@@ -40,7 +40,7 @@ a:visited {
     float: left;
     padding: 1em 2em;
     width: 13em;
-    background: #000;
+    background: #6699FF;
 
     form, div {
       display: inline;
@@ -114,11 +114,11 @@ table tr td {
   }
 
   .list_line_even {
-    background:    #e0f8f8;
+    background:    #6699FF;
   }
 
   .list_line_odd {
-    background: #FFAA44;
+    background: #FFFFFF;
   }
 }
 
@@ -167,4 +167,12 @@ form {
     display: none
     }
   }
+}
+#footer {
+  width:100%;
+  height:20px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background:#ffffff;
 }
