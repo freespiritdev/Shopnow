@@ -10,7 +10,7 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-   def create
+  def create
     @cart = Cart.new(cart_params)
     if @cart.save
       redirect_to @cart, notice: 'Cart was created'
@@ -19,7 +19,7 @@ class CartsController < ApplicationController
     end
   end
 
-   def update
+  def update
     @cart = Cart.find(params[:id])
     if @cart.update(cart_params)
       redirect_to @cart, notice: 'Cart successfully updated.'
@@ -29,10 +29,12 @@ class CartsController < ApplicationController
   end
 
    def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
+    @cart.destroy 
+    if @cart.id == session[:cart_id]
       session[:cart_id] = nil
-      redirect_to @store
+    redirect_to stores_url
     end
+  end
 
   private
     def set_cart
@@ -45,6 +47,6 @@ class CartsController < ApplicationController
 
   def invalid_cart
     logger.error "Attempt to access invalid cart #{params[:id]}"
-    redirect_to shops_url, notice: 'Invalid cart'
+    redirect_to stores_url, notice: 'Invalid cart'
   end
 end
