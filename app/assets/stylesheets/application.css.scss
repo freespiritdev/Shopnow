@@ -19,7 +19,8 @@ a:visited {
 }
 
 body {
-  background: #dd4433;
+  background: #ffffff;
+  height:100%;
 }
 
 #notice {
@@ -171,6 +172,10 @@ form {
     display: none
     }
   }
+}
+#wrapper {
+  min-height:100%;
+  position:float;
 }
 #footer {
   width:100%;
