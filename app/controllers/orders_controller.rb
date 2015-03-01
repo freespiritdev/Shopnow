@@ -7,16 +7,17 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def show
+  end
+
   def new
     if @cart.line_items.empty?
-      redirect_to @store, notice: "Your cart is empty"
+      redirect_to stores_url, notice: "Your cart is empty"
       return
     end
   
     @order = Order.new
   end
-
-
 
   def create
     @order = Order.new(order_params)
@@ -28,6 +29,15 @@ class OrdersController < ApplicationController
       else
         render action: 'new'
       end
+    end
+
+  private
+    def set_order
+      @order = Order.find(params[:id])
+    end
+
+    def order_params
+      params.require(:order).permit(:name, :address, :email, :pay_type)
     end
     
 end
