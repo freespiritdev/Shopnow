@@ -31,6 +31,19 @@ class OrdersController < ApplicationController
       end
     end
 
+   def update
+      if @order.update(order_params)
+        redirect_to @order, notice: 'Order was successfully updated.'
+      else
+        render :edit
+      end
+    end
+
+  def destroy
+    @order.destroy
+      redirect_to orders_url, notice: 'Order was successfully destroyed'
+  end
+
   private
     def set_order
       @order = Order.find(params[:id])
