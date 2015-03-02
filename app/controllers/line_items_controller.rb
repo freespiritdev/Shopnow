@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
 
   def update
     if @line_item.update(line_item_params)
-      redirect_to @line_item, notice: 'Line item was successfully updated.'
+      redirect_to @line_item, notice: 'Line item was successfully updated!'
     else
       render action: 'edit'
     end

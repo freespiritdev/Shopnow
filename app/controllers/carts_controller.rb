@@ -13,7 +13,7 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new(cart_params)
     if @cart.save
-      redirect_to @cart, notice: 'Cart was created'
+      redirect_to @cart, notice: 'Cart was created!'
     else
       render action: 'new'
     end
@@ -22,7 +22,7 @@ class CartsController < ApplicationController
   def update
     @cart = Cart.find(params[:id])
     if @cart.update(cart_params)
-      redirect_to @cart, notice: 'Cart successfully updated.'
+      redirect_to @cart, notice: 'Cart successfully updated!'
     else
       render action: 'edit'
     end
@@ -47,6 +47,6 @@ class CartsController < ApplicationController
 
   def invalid_cart
     logger.error "Attempt to access invalid cart #{params[:id]}"
-    redirect_to stores_url, notice: 'Invalid cart'
+    redirect_to stores_url, notice: 'Invalid cart!'
   end
 end

@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def new
     if @cart.line_items.empty?
-      redirect_to stores_url, notice: "Your cart is empty"
+      redirect_to stores_url, notice: "Your cart is empty!"
       return
     end
   
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        redirect_to @order, notice: 'Thank you for your order'
+        redirect_to @order, notice: 'Thank you for your order!'
       else
         render action: 'new'
       end
@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 
    def update
       if @order.update(order_params)
-        redirect_to @order, notice: 'Order was successfully updated.'
+        redirect_to @order, notice: 'Order was successfully updated!'
       else
         render :edit
       end
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-      redirect_to orders_url, notice: 'Order was successfully destroyed'
+      redirect_to orders_url, notice: 'Order was successfully destroyed!'
   end
 
   private
