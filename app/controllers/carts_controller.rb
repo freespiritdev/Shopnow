@@ -32,7 +32,7 @@ class CartsController < ApplicationController
     @cart.destroy 
     if @cart.id == session[:cart_id]
       session[:cart_id] = nil
-    redirect_to stores_url
+      redirect_to stores_url
     end
   end
 
