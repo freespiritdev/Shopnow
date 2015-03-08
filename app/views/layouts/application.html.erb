@@ -5,14 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= link_to "ShopNow", stores_path %>
-  <%= link_to "Products", products_path %>
-  <%= link_to "Orders", orders_path %>
+  <%= link_to "ShopNow", stores_path %> |
+  <%= link_to "Products", products_path %> |
+  <%= link_to "Orders", orders_path %> |
 </head>
 
 <body class="<%= controller.controller_name %>">
-  <div id="banner">
+  <div class="pull-right user-info">
+    <% if current_user %>
+      <em> Hello <%= current_user.email %>!</em> <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <% end %>
   </div>
+
   <div id="wrapper">
     <div id="columns">
       <div id="side">
@@ -24,16 +29,13 @@
       </div>
     </div>
   
-    <div id="main">
       <%= yield %>
-    </div>
-    
+
       <footer id="footer" align="center"> 
         <em>
           Copyright &copy; 2015 CBS VI 360
         </em>
       </footer>
-  
-  </div>
-</body>
+    </div>
+  </body>
 </html>
