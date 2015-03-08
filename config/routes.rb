@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
- 
-  get 'user/index'
-
-  get 'user/new'
 
   get 'orders/index'
 
@@ -10,6 +6,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :line_items
   resources :orders
+  resources :users
  
 
   get 'stores/index'
