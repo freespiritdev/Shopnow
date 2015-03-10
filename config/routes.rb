@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#index'
+
   devise_for :users
   get 'orders/index'
 
