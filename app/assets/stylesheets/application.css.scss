@@ -1,26 +1,32 @@
+@import "bootstrap";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+body {
+  background: #ffffff;
+  font-family: 'Gotham', sans-serif;
+  height:100%;
+  left: 15%;
+  right: 15%;
+  bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+  color: #0099CC;
+  line-height: 30px;
+}
+
 a:link, a:active {
    color: #000000;
 }
 a:visited {
  color: #6699FF;
-}
-
-#banner {
-  background: #fff;
-  padding: 10px;
-  border-bottom: 0px solid;
-  font: small-caps 40px/40px "Helvetica", Geneva, Arial, sans-serif;
-  color: #000;
-  text-align: center;
-
-  img {
-    float: left;
-  }
-}
-
-body {
-  background: #ffffff;
-  height:100%;
 }
 
 #notice {
@@ -29,7 +35,7 @@ body {
   padding: 1em;
   margin-bottom: 2em;
   background-color: #f0f0f0;
-  font: bold smaller sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 #columns {
@@ -119,10 +125,12 @@ table tr td {
 
   .list_line_even {
     background:    #dd4433;
+    float: left;
   }
 
   .list_line_odd {
     background: #FFFFFF;
+    float: left;
   }
 }
 
@@ -184,3 +192,77 @@ form {
   left:0;
   background:#ffffff;
 }
+
+.entry {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+/* Portrait iPhone 6 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+  
+    body {
+    width: 400px;
+    font-size: 16px;
+  }
+}
+
+/* Landscape iPhone 6*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+ 
+    body {
+    width: 600px;
+    font-size: 16px;
+  }
+}
+
+/* iPad */
+@media only screen and (min-width: 768px) 
+and (max-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 1) {
+  
+  body {
+    width: 800px;
+    font-size: 16px;
+  }
+}
+
+/* Non-Retina Screens */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+  
+  body {
+    width: 1220px;
+    font-size: 16px;
+  }
+}
+
+/*  Retina Screens  */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+  
+  body {
+    width: 1320px;
+    font-size: 16px;
+  }
+}
+

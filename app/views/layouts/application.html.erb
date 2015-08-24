@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shop Now!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= link_to "ShopNow", stores_path %> |
-  <%= link_to "Products", products_path %> |
-  <%= link_to "Orders", orders_path %> |
 </head>
 
 <body class="<%= controller.controller_name %>">
-  <div class="pull-right user-info">
-    <% if current_user %>
-      <em> Hello <%= current_user.email %>!</em> <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-    <% end %>
-  </div>
+  <div id="wrapper">
+    <div class="container-fluid">
+      <ul class="nav nav-tabs">  
+        <%= link_to "ShopNow", stores_path %> 
+        <%= link_to "Products", products_path %>
+        <%= link_to "Orders", orders_path %> 
+
+        <div class="pull-right user-info">
+          <% if current_user %>
+          <%= image_tag(current_user.image.tiny.url) if current_user.image? %>
+          <h5>Hi, you're signed in as:</h5> <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %> </em>
+          <%= link_to "Sign out", destroy_user_session_path, class: 'movielink', method: :delete %>
+          <div align = "center"><%= image_tag(current_user.image)%></div> <br>
+          <% else %>
+          <%= link_to "Sign In", new_user_session_path %> <em>or</em> 
+          <%= link_to "Sign Up", new_user_registration_path %><em><br>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+  </div> 
 
   <div id="wrapper">
     <div id="columns">
@@ -28,14 +41,32 @@
         <% end %>
       </div>
     </div>
-  
-      <%= yield %>
+  </div>
 
-      <footer id="footer" align="center"> 
-        <em>
-          Copyright &copy; 2015 CBS VI 360
-        </em>
-      </footer>
-    </div>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+
+    <% elsif flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= yield %>
+
+    <footer id="footer" align="center"> 
+      <em>
+        Copyright &copy; 2015 FreeSpirit Development.
+      </em>
+    </footer>
   </body>
 </html>
