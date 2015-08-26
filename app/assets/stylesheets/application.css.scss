@@ -5,6 +5,8 @@ html, body {
   padding: 0;
   border: 0;
   font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 body {
@@ -22,19 +24,31 @@ h1 {
   line-height: 30px;
 }
 
+h2{
+  text-align: center;
+  color: #0099CC;
+  line-height: 30px;
+  margin-top: 55px;
+}
+
 a:link, a:active {
    color: #000000;
 }
+
 a:visited {
  color: #6699FF;
 }
 
+em {
+  color: #ffffff;
+}
+
 #notice {
   color: #000 !important;
-  border: 2px solid red;
+  border: 2px solid green;
   padding: 1em;
   margin-bottom: 2em;
-  background-color: #f0f0f0;
+  background-color: #ccc;
   font-family: 'Gotham', sans-serif;
 }
 
@@ -88,11 +102,6 @@ a:visited {
   table {
     border-collapse: collapse;
   }
-
-table tr td {
-  padding: 5px;
-  vertical-align: top;
-}
 
 .list_image {
   width: 60px;
@@ -180,10 +189,12 @@ form {
     }
   }
 }
+
 #wrapper {
   min-height:100%;
   position:float;
 }
+
 #footer {
   width:100%;
   height:20px;
@@ -197,6 +208,43 @@ form {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 55px;
+}
+
+.products {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 55px;
+}
+
+.orders {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 55px;
+
+  table {
+    padding: 10px;
+    letter-spacing: 1px;
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  th {
+    padding: 10px;
+  }
+
+  tr {
+    padding: 10px;
+  }
+}
+
+.stores {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 55px;
 }
 
 @-ms-viewport{
