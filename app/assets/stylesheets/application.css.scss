@@ -101,6 +101,8 @@ em {
 .products {
   table {
     border-collapse: collapse;
+    width: 1300px;
+    margin: 30px;
   }
 
 .list_image {
@@ -133,7 +135,7 @@ em {
   }
 
   .list_line_even {
-    background:    #dd4433;
+    background:    #ffffff;
     float: left;
   }
 
