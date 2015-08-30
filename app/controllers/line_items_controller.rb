@@ -13,12 +13,12 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    product = Product.find(params[:product_id])
+    product = Product.new
     @line_item = @cart.add_product(product.id) 
 
     if @line_item.save
-      redirect_to @store
-      format.js {@current_item = @line_item}
+      redirect_to @line_item
+      
 
     else
       render action: 'new'
