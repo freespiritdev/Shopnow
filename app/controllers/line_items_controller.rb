@@ -13,13 +13,11 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    product = Product.new
-    @line_item = @cart.add_product(product.id) 
+    product = Product.find(params[:product_id])
+    @line_item = @cart.line_items.build(product: product)
 
     if @line_item.save
-      redirect_to @line_item
-      
-
+      redirect_to @line_item.cart
     else
       render action: 'new'
     end
@@ -36,10 +34,10 @@ class LineItemsController < ApplicationController
   private
 
    def set_line_item
-      @line_item = LineItem.find(params[:id])
-    end
+    @line_item = LineItem.find(params[:id])
+   end
 
-  def line_item_params
-      params.require(:line_item).permit(:product_id)
-    end
+   def line_item_params
+    params.require(:line_item).permit(:product_id)
+   end
 end
