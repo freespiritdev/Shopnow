@@ -17,7 +17,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring', '~> 1.3.3',      group: :development
+gem 'spring', '~> 1.3.6',      group: :development
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'devise'
 gem 'figaro', '1.1.0'

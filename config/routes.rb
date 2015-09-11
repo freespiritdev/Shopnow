@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'admin' => 'admin#index'
 
   devise_for :users
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :line_items
   resources :orders
+  resources :women
   
   get 'stores/index'
 
