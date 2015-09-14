@@ -1,11 +1,4 @@
-<h1>New women item</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', women_path %>
-
-
-<%= simple_form_for :woman, url: women_path do |f| %>
+  <%= simple_form_for :woman, url: women_path do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
