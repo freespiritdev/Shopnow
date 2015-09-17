@@ -5,24 +5,3 @@
 <%= link_to 'Back', women_path %>
 
 
-<%= simple_form_for :woman, url: women_path do |f| %>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, rows: 6 %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
