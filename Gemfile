@@ -22,4 +22,5 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'devise'
 gem 'figaro', '1.1.0'
 gem 'bootstrap-sass'
+gem 'angularjs-rails'
 

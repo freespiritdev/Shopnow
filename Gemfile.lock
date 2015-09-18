@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    angularjs-rails (1.4.4)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (5.2.1.2)
       execjs
@@ -146,6 +147,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
