@@ -1,3 +1,17 @@
 <h1>Current Women items available</h1>
 
+<% @women.each do |woman| %>
+<%= image_tag(woman.image_url, class: 'list_image') %>
+<%= woman.title %>
+<%= truncate(strip_tags(woman.description), length:60) %>
+<%= woman.price %><br>
+
+<%= link_to 'Show', woman %>
+<%= link_to 'Edit Product', edit_woman_path(woman) %>
+<%= link_to 'Delete', woman, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
+
+
 <%= link_to 'New Women item', new_woman_path %>
+
