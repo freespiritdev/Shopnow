@@ -1,5 +1,6 @@
 <h1>Current Women items available</h1>
 
+<div class="col-md-2">
 <% @women.each do |woman| %>
 <%= image_tag(woman.image_url, class: 'list_image') %>
 <%= woman.title %>
@@ -9,6 +10,7 @@
 <%= link_to 'Show', woman %>
 <%= link_to 'Edit Product', edit_woman_path(woman) %>
 <%= link_to 'Delete', woman, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
 <% end %>
 <br>
 
