@@ -1,18 +1,28 @@
 <h1>Current Women items available</h1>
 
-<div class="col-md-2">
-<% @women.each do |woman| %>
-<%= image_tag(woman.image_url, class: 'list_image') %>
-<%= woman.title %>
-<%= truncate(strip_tags(woman.description), length:60) %>
-<%= woman.price %><br>
-
-<%= link_to 'Show', woman %>
-<%= link_to 'Edit Product', edit_woman_path(woman) %>
-<%= link_to 'Delete', woman, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-<% end %>
-<br>
+<div class="table-responsive">
+  <table class="table">
+    <% @women.each do |woman| %>
+      <tr>
+        <td>
+          <%= image_tag(woman.image_url, class: 'list_image') %>
+        </td>
+        <td class="list_description">
+          <dl>
+            <dt><%= woman.title %></dt>
+            <dt><%= truncate(strip_tags(woman.description), length:60) %></dt>
+            <dt><%= woman.price %></dt>
+          </dl>
+        </td>
+        <td class="list_actions">
+          <%= link_to 'Show', woman %><br>
+          <%= link_to 'Edit Women product', edit_woman_path(woman) %><br>
+          <%= link_to 'Delete', woman, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
 
 <%= link_to 'New Women item', new_woman_path %>
