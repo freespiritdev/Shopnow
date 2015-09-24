@@ -1,4 +1,5 @@
 class WomenController < ApplicationController
+  before_action :set_woman, only: [:show, :edit, :update, :destroy]
   def index
     @women = Woman.all
   end
@@ -19,12 +20,30 @@ class WomenController < ApplicationController
     end
   end
 
+  def update
+    @woman = Woman.find(params[:id])
+    if @woman.update(woman_params)
+      redirect_to @woman, notice: 'Woman item updated!'
+    else
+      render action: 'edit'
+    end
+  end
+
   def show
   end
 
-  private
+  def destroy
+  end
 
-  def woman_params
+
+  private
+  
+    def set_woman
+      @woman = Woman.find(params[:id])
+    end
+
+
+    def woman_params
       params.require(:woman).permit(:title, :description, :image_url, :price)
     end
 end
