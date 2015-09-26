@@ -33,6 +33,16 @@ class WomenController < ApplicationController
   end
 
   def destroy
+    @woman.destroy
+    title = @woman.title
+
+    if @woman.destroy
+      flash[:notice] = "\"#{title}\" was deleted!"
+      redirect_to @woman
+    else
+      flash[:error] = "There was an error!"
+      render :show
+    end
   end
 
 
