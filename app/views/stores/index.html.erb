@@ -19,3 +19,19 @@
     <% end %>
   <% end %>
 <% end %>
+
+<% cache ['store', Woman.latest] do %>
+  <% @women.each do |woman| %> 
+    <% cache ['entry', woman] do %>
+      <div class="entry">
+        <%= image_tag(woman.image_url, :width =>60) %>
+        <h3><%= woman.title %></h3>
+        <%= sanitize(woman.description) %>
+        <div class= "price_line">
+          <span class="price"><%= number_to_currency(woman.price) %></span>
+           <%= button_to 'Add to Cart', line_items_path(woman_id: woman), remote: true, class: "btn btn-primary" %><br>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
