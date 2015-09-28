@@ -25,7 +25,6 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Products", products_path %><span class="sr-only">(current)</span></a></li>
           <li class="active"><%= link_to "Women", women_path %><span class="sr-only">(current)</span></a></li>
-          <li><%= link_to "Orders", orders_path %></li>
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
@@ -44,7 +43,7 @@
             <%= link_to "Sign In", new_user_session_path %> <em>or</em> 
             <%= link_to "Sign Up", new_user_registration_path %><br>
             <% end %>
-            <%= link_to "My Shopping Cart", @cart %>
+            <%= link_to "Shopping Cart", @cart %>
           </div>
         </ul>
 
