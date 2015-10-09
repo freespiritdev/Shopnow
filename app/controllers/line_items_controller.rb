@@ -14,6 +14,7 @@ class LineItemsController < ApplicationController
 
   def create
     product = Product.find(params[:product_id])
+    woman = Woman.find(params[:woman_id])
     @line_item = @cart.line_items.build(product: product)
 
     if @line_item.save
