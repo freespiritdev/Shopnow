@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Grab the latest items</h1>
+<h1>Available items</h1>
 
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
