@@ -31,37 +31,36 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
-          <div class="pull-right user-info">
-            <% if current_user %>
-            <%= image_tag(current_user.image.tiny.url) if current_user.image? %>
-            <h5>Hi, you're signed in as:</h5> <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %> </em>
-            <%= link_to "Sign out", destroy_user_session_path, class: 'signout', method: :delete %>
-            <div align = "center"><%= image_tag(current_user.image)%></div> <br>
-            <% else %>
-            <%= link_to "Sign In", new_user_session_path %> <em>or</em> 
-            <%= link_to "Sign Up", new_user_registration_path %><br>
+          <ul class="nav navbar-nav navbar-right">
+            <div class="pull-right user-info">
+              <% if current_user %>
+                <%= image_tag(current_user.image.tiny.url) if current_user.image? %>
+                  <h5>Hi, you're signed in as:</h5> <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %> </em>
+                  <%= link_to "Sign out", destroy_user_session_path, class: 'signout', method: :delete %>
+                    <div align = "center"><%= image_tag(current_user.image)%></div> <br>
+                <% else %>
+                <%= link_to "Sign In", new_user_session_path %> <em>or</em> 
+                <%= link_to "Sign Up", new_user_registration_path %><br>
+              <% end %>
+              <%= link_to "Shopping Cart", @cart %>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="wrapper">
+      <div id="columns">
+        <div id="side">
+          <% if @cart %> 
+            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>
             <% end %>
-            <%= link_to "Shopping Cart", @cart %>
-          </div>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-
-  <div id="wrapper">
-    <div id="columns">
-      <div id="side">
-        <% if @cart %> 
-          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-          <%= render @cart %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <%= yield %>
+    <%= yield %>
 
     <footer id="footer"> 
       <em>
