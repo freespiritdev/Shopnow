@@ -29,7 +29,7 @@
         <%= sanitize(woman.description) %>
         <div class= "price_line">
           <span class="price"><%= number_to_currency(woman.price) %></span>
-           <%= button_to 'Add to Cart', line_items_path(woman_id: woman), remote: true, class: "btn btn-primary" %><br>
+           <%= button_to 'Add to Cart', line_items_path(woman_id: woman), remote: true, class: "btn btn-info" %><br>
         </div>
       </div>
     <% end %>
