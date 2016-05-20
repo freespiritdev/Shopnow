@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>
+
 <p>
   <strong>Product:</strong>
   <%= @line_item.product %>
@@ -10,5 +13,3 @@
   <%= @line_item.cart %>
 </p>
 
-<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
-<%= link_to 'Back', line_items_path %>
